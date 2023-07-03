@@ -1,0 +1,9 @@
+{
+	"name": "datafactory1503tryfon",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0c7a61c9-5f05-41e9-9881-f62eca883943",
+		"tenantId": "881c1a1d-317a-48d4-ade6-bc9b4da3bb57"
+	}
+}
