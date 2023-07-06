@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactory1503tryfon"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"azuresynapse1503pooldb_connection_connectionString": {
+			"value": ""
+		},
+		"storageaccount1503tryfon_connection_accountKey": {
+			"value": ""
+		},
+		"storageaccount1503tryfon_connection_properties_typeProperties_url": {
+			"value": "https://storageaccount1503tryfon.dfs.core.windows.net/"
+		}
+	}
+}
