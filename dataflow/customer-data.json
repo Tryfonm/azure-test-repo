@@ -55,9 +55,6 @@
 				},
 				{
 					"name": "join2"
-				},
-				{
-					"name": "ProductSKstream"
 				}
 			],
 			"scriptLines": [
@@ -137,9 +134,6 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join2",
-				"join2 keyGenerate(output(ProductSK as long),",
-				"     startAt: 1L,",
-				"     stepValue: 1L) ~> ProductSKstream",
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -162,7 +156,7 @@
 				"          CompanyName,",
 				"          SalesPerson",
 				"     )) ~> DimensionCustomer",
-				"ProductSKstream sink(allowSchemaDrift: true,",
+				"join2 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          ProductSK as integer,",
@@ -184,7 +178,6 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          ProductSK,",
 				"          ProductID,",
 				"          ProductModelID = source3@ProductModelID,",
 				"          ProductcategoryID = source2@ProductCategoryID,",
