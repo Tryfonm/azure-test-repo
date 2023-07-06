@@ -1658,6 +1658,11 @@
 				"type": "AzureSqlDWTable",
 				"schema": [
 					{
+						"name": "ProductSK",
+						"type": "int",
+						"precision": 10
+					},
+					{
 						"name": "ProductID",
 						"type": "int",
 						"precision": 10
@@ -2466,6 +2471,7 @@
 						"join2 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
+						"          ProductSK as integer,",
 						"          ProductID as integer,",
 						"          ProductModelID as integer,",
 						"          ProductcategoryID as integer,",
@@ -2486,7 +2492,7 @@
 						"     mapColumn(",
 						"          ProductID,",
 						"          ProductModelID = source3@ProductModelID,",
-						"          ProductcategoryID = source4@ProductCategoryID,",
+						"          ProductcategoryID = source2@ProductCategoryID,",
 						"          ProductName = source2@Name,",
 						"          ProductModelName = source3@Name,",
 						"          ProductCategoryName = source4@Name",
